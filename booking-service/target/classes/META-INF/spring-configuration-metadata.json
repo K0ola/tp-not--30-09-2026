@@ -1,0 +1,49 @@
+{
+  "groups": [
+    {
+      "name": "booking",
+      "type": "com.fitconnect.bookingservice.config.BookingProperties",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties"
+    },
+    {
+      "name": "booking.scheduler",
+      "type": "com.fitconnect.bookingservice.config.BookingProperties$Scheduler",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "booking.cancellation-deadline",
+      "type": "java.time.Duration",
+      "description": "Annulation gratuite jusqu'a cette duree avant le cours (defaut : 24 heures).",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties",
+      "defaultValue": "24h"
+    },
+    {
+      "name": "booking.payment-deadline",
+      "type": "java.time.Duration",
+      "description": "Delai de paiement apres la reservation (defaut : 1 heure).",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties",
+      "defaultValue": "1h"
+    },
+    {
+      "name": "booking.scheduler.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties$Scheduler",
+      "defaultValue": true
+    },
+    {
+      "name": "booking.scheduler.expiration-rate",
+      "type": "java.lang.Long",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties$Scheduler",
+      "defaultValue": 300000
+    },
+    {
+      "name": "booking.scheduler.reminder-cron",
+      "type": "java.lang.String",
+      "sourceType": "com.fitconnect.bookingservice.config.BookingProperties$Scheduler",
+      "defaultValue": "0 0 * * * *"
+    }
+  ],
+  "hints": []
+}

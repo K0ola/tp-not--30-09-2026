@@ -1,0 +1,3 @@
+com/fitconnect/notificationservice/service/EmailSenderTest.class
+com/fitconnect/notificationservice/service/NotificationServiceTest.class
+com/fitconnect/notificationservice/controller/NotificationControllerIntegrationTest.class

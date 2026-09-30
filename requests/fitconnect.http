@@ -1,0 +1,101 @@
+@gatewayUrl = http://localhost:8080
+
+### 1. Creer un cours (10 places, 25 EUR)
+POST {{gatewayUrl}}/api/classes
+Content-Type: application/json
+
+{
+  "name": "Yoga Vinyasa",
+  "description": "Enchainement fluide de postures pour tous",
+  "instructor": "Marie Dupont",
+  "gymLocation": "Paris",
+  "category": "YOGA",
+  "level": "BEGINNER",
+  "durationMinutes": 60,
+  "maxParticipants": 10,
+  "price": 25.00,
+  "dateTime": "2026-10-15T18:30:00"
+}
+
+### Lister les cours (pagination)
+GET {{gatewayUrl}}/api/classes?page=0&size=10&sort=dateTime,asc
+
+### Filtrer par categorie et niveau
+GET {{gatewayUrl}}/api/classes?category=YOGA&level=BEGINNER
+
+### Rechercher par date / localisation
+GET {{gatewayUrl}}/api/classes/search?dateFrom=2026-10-01&dateTo=2026-10-31&location=Paris
+
+### Details d'un cours (remplacer l'id)
+GET {{gatewayUrl}}/api/classes/1
+
+### 2. Reserver 2 places -> 201 PENDING_PAYMENT
+POST {{gatewayUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "userEmail": "john@example.com",
+  "userName": "John Doe",
+  "classId": 1,
+  "numberOfSpots": 2
+}
+
+### Verifier la reservation (remplacer l'id)
+GET {{gatewayUrl}}/api/bookings/1
+
+### 3. Payer -> 200 CONFIRMED (2 x 25 = 50 EUR < 100 EUR : accepte)
+PATCH {{gatewayUrl}}/api/bookings/1/confirm
+Content-Type: application/json
+
+{
+  "paymentMethod": "CREDIT_CARD",
+  "cardLastFour": "1234",
+  "transactionId": "txn_123456"
+}
+
+### Paiement de la reservation
+GET {{gatewayUrl}}/api/payments/booking/1
+
+### 4. Annuler (dans les delais) -> 200 CANCELLED + remboursement
+PATCH {{gatewayUrl}}/api/bookings/1/cancel
+
+### Verifier le remboursement -> status REFUNDED
+GET {{gatewayUrl}}/api/payments/booking/1
+
+### Verifier les places liberees
+GET {{gatewayUrl}}/api/classes/1
+
+### Historique des notifications de l'utilisateur
+GET {{gatewayUrl}}/api/notifications/user/1
+
+### 5. Erreur : surreservation (4 places sur un cours quasi plein) -> 409
+POST {{gatewayUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "userId": 2,
+  "userEmail": "alice@example.com",
+  "userName": "Alice",
+  "classId": 1,
+  "numberOfSpots": 4
+}
+
+### 5. Erreur : paiement refuse (4 x 60 EUR = 240 EUR >= 100 EUR) -> 402
+# Reserver d'abord 4 places sur le cours "Spinning Endurance" (id 5 du jeu de donnees)
+POST {{gatewayUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "userId": 3,
+  "userEmail": "bob@example.com",
+  "userName": "Bob",
+  "classId": 5,
+  "numberOfSpots": 4
+}
+
+### Reservations en attente expirees (scheduler)
+GET {{gatewayUrl}}/api/bookings/expired
+
+### Notifications en attente / echouees
+GET {{gatewayUrl}}/api/notifications/pending

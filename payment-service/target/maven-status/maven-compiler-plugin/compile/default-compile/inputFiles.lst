@@ -1,0 +1,14 @@
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/PaymentServiceApplication.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/config/OpenApiConfig.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/controller/PaymentController.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/dto/PaymentRequest.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/dto/PaymentResponse.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/exception/ApiError.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/exception/ConflictException.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/exception/GlobalExceptionHandler.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/exception/ResourceNotFoundException.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/model/Payment.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/model/PaymentMethod.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/model/PaymentStatus.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/repository/PaymentRepository.java
+/Users/k0la/Documents/Dev/Efrei/M2/culture informatique/tp-30-09-2026/payment-service/src/main/java/com/fitconnect/paymentservice/service/PaymentService.java

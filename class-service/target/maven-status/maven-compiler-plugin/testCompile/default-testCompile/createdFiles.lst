@@ -1,0 +1,4 @@
+com/fitconnect/classservice/repository/OptimisticLockingTest.class
+com/fitconnect/classservice/model/FitnessClassTest.class
+com/fitconnect/classservice/service/FitnessClassServiceTest.class
+com/fitconnect/classservice/controller/FitnessClassControllerIntegrationTest.class
